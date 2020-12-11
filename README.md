@@ -1,2 +1,2 @@
-# monks-problem
-Machine Learning(654AA) September 2020 Project by Davide Perra and Yohannis Kifle. 
+# Machine Learning 20020
+This project is for the course Machine Learning course(654AA) at university of Pisa A.Y 2020/2021
