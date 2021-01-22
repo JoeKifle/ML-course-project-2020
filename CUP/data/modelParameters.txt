@@ -2,89 +2,89 @@
 #SVR parameters
 
 param_grid_svR = {
-          'estimator__base_estimator__kernel':['rbf','sigmoid'],  # SVR
-          'estimator__base_estimator__C':np.linspace(6, 40, 100).tolist(),
-          'estimator__base_estimator__gamma': [0.07, 0.09, 0.11,'scale'],
-          'estimator__base_estimator__epsilon':[0.1,0.2] }
+          'base_estimator__kernel':['rbf','sigmoid'],  # SVR
+          'base_estimator__C':np.linspace(6, 40, 100).tolist(),
+          'base_estimator__gamma': [0.07, 0.09, 0.11,'scale'],
+          'base_estimator__epsilon':[0.1,0.2] }
 
 #Random forest parameters
 
 param_grid_rfR = {
-          'estimator__base_estimator__n_estimators':[70,75,80,85,90,95], #RandomForest Regressor
-          'estimator__base_estimator__max_depth':[5,7,8,10],
-          'estimator__base_estimator__criterion':['mse','mae'],
-          'estimator__base_estimator__max_features':['sqrt','log2'],
-          'estimator__base_estimator__ccp_alpha':[0.0,1,1.5]}
+          'base_estimator__n_estimators':[70,75,80,85,90,95], #RandomForest Regressor
+          'base_estimator__max_depth':[5,7,8,10],
+          'base_estimator__criterion':['mse','mae'],
+          'base_estimator__max_features':['sqrt','log2'],
+          'base_estimator__ccp_alpha':[0.0,1,1.5]}
 
 # KNeighbor Regressor parameters
 param_grid_knR = {
-          'estimator__base_estimator__n_neighbors':[5,6,7,8,9,10],    # Random Forest Regressor
-          'estimator__base_estimator__leaf_size':[1,2,3,5],
+          'base_estimator__n_neighbors':[5,6,7,8,9,10],    # Random Forest Regressor
+          'base_estimator__leaf_size':[1,2,3,5],
 
-          'estimator__base_estimator__weights':['uniform', 'distance'],
-          'estimator__base_estimator__algorithm':['auto', 'ball_tree','kd_tree','brute']}
+          'base_estimator__weights':['uniform', 'distance'],
+          'base_estimator__algorithm':['auto', 'ball_tree','kd_tree','brute']}
 
 #Extra Regressor paramaters
 
 param_grid_etR = {
-            'estimator__base_estimator__criterion': ['mse', 'mae','poisson','friedman_mse'], 
-            'estimator__base_estimator__min_samples_split': [10, 20, 40,'best'],
-            'estimator__base_estimator__max_depth': [2, 6, 8],
-            'estimator__base_estimator__min_samples_leaf': [20, 40, 100],
-            'estimator__base_estimator__max_leaf_nodes': [5, 20, 100]}
+            'base_estimator__criterion': ['mse', 'mae','poisson','friedman_mse'], 
+            'base_estimator__min_samples_split': [10, 20, 40,'best'],
+            'base_estimator__max_depth': [2, 6, 8],
+            'base_estimator__min_samples_leaf': [20, 40, 100],
+            'base_estimator__max_leaf_nodes': [5, 20, 100]}
 
 #Decision Tree regressor parameters
 
 param_grid_dtR = {
-            'estimator__base_estimator__criterion': ['mse', 'mae','poisson','friedman_mse'],
-            'estimator__base_estimator__min_samples_split': [10, 20, 40,'best'],
-            'estimator__base_estimator__max_depth': [2, 6, 8],
-            'estimator__base_estimator__min_samples_leaf': [20, 40, 100],
-            'estimator__base_estimator__max_leaf_nodes': [5, 20, 100]}   
+            'base_estimator__criterion': ['mse', 'mae','poisson','friedman_mse'],
+            'base_estimator__min_samples_split': [10, 20, 40,'best'],
+            'base_estimator__max_depth': [2, 6, 8],
+            'base_estimator__min_samples_leaf': [20, 40, 100],
+            'base_estimator__max_leaf_nodes': [5, 20, 100]}   
 
 
 # Ridge Regression
 
 param_grid_rR = {
-            'estimator__base_estimator__alpha': []}
+            'base_estimator__alpha': []}
 
 # Lasso Regression
 param_grid_rR = {
-            'estimator__base_estimator__alpha': []}
+            'base_estimator__alpha': []}
 
 # Elastic Net Regression Note: 0 <= l1_ratio <= 1, 
 #This (setting to ‘random’) often leads to significantly faster convergence especially when tol is higher than 1e-4.
 param_grid_enR = {
-            'estimator__base_estimator__alpha': [],
-            'estimator__base_estimator__l1_ratio': [],
-            'estimator__base_estimator__max_iter': [],
-            'estimator__base_estimator__selection': ['cyclic', 'random']}
+            'base_estimator__alpha': [],
+            'base_estimator__l1_ratio': [],
+            'base_estimator__max_iter': [],
+            'base_estimator__selection': ['cyclic', 'random']}
 
 # ARDRegression Regressor parameters   
 param_grid_arR = { 
-            'estimator__base_estimator__n_iter': [],
-            'estimator__base_estimator__alpha_1': [],
-            'estimator__base_estimator__alpha_2': [],
-            'estimator__base_estimator__lambda_1': [],
-            'estimator__base_estimator__lambda_2': []}
+            'base_estimator__n_iter': [],
+            'base_estimator__alpha_1': [],
+            'base_estimator__alpha_2': [],
+            'base_estimator__lambda_1': [],
+            'base_estimator__lambda_2': []}
 
 # BayesianRidge regressor
 # n_iter, default: 300.
 # alpha_1 (all of them) : default=1e-6
 
 param_grid_brR = { 
-            'estimator__base_estimator__n_iter': [],
-            'estimator__base_estimator__alpha_1': [],
-            'estimator__base_estimator__alpha_2': [],
-            'estimator__base_estimator__lambda_1': [],
-            'estimator__base_estimator__lambda_1': []}
+            'base_estimator__n_iter': [],
+            'base_estimator__alpha_1': [],
+            'base_estimator__alpha_2': [],
+            'base_estimator__lambda_1': [],
+            'base_estimator__lambda_1': []}
 
 #  SGD Regressor parameters  alpha: regularization term, 
 # epsilon: only under 'huber','epsilon_insensitive','squared_epsilon_insensitive' loss.
 param_grid_sgR = { 
-            'estimator__base_estimator__loss': ['squared_loss','huber','epsilon_insensitive','squared_epsilon_insensitive'],
-            'estimator__base_estimator__penalty': ['l2','l1'],
-            'estimator__base_estimator__epsilon': []}
+            'base_estimator__loss': ['squared_loss','huber','epsilon_insensitive','squared_epsilon_insensitive'],
+            'base_estimator__penalty': ['l2','l1'],
+            'base_estimator__epsilon': []}
     
 #  MLPRegressor Regressor parameters 
 # hidden_layer_sizes : tuple, The ith element represents the number of neurons in the ith hidden layer.
@@ -94,20 +94,20 @@ param_grid_sgR = {
 # early_stoppingbool, default=False, Only effective when solver=’sgd’ or ‘adam’
 # nesterovs_momentumbool, default=True, Only used when solver=’sgd’ and momentum > 0
 param_grid_mlpR = { 
-            'estimator__base_estimator__hidden_layer_sizes': [],
-            'estimator__base_estimator__activation': ['identity','logistic','tanh','relu'],
-            'estimator__base_estimator__solver': ['lbfgs','sgd','adam'],
-            'estimator__base_estimator__learning_rate': [],
-            'estimator__base_estimator__early_stopping': False, 
-            'estimator__base_estimator__nesterovs_momentum': False,
+            'base_estimator__hidden_layer_sizes': [],
+            'base_estimator__activation': ['identity','logistic','tanh','relu'],
+            'base_estimator__solver': ['lbfgs','sgd','adam'],
+            'base_estimator__learning_rate': [],
+            'base_estimator__early_stopping': False, 
+            'base_estimator__nesterovs_momentum': False,
             }  
 # GradientBoostingRegressor ****
 # n_estimators: The number of boosting stages to perform. Gradient boosting is 
 # fairly robust to over-fitting so a large number usually results in better performance.
 # default: 100.
 param_grid_gbR = { 
-            'estimator__base_estimator__loss': ['ls','lad','huber','quantile'],
-            'estimator__base_estimator__learning_rate': [],
-            'estimator__base_estimator__criterion': ['friedman_mse','mse','mae'],
-            'estimator__base_estimator__n_estimators': [],
+            'base_estimator__loss': ['ls','lad','huber','quantile'],
+            'base_estimator__learning_rate': [],
+            'base_estimator__criterion': ['friedman_mse','mse','mae'],
+            'base_estimator__n_estimators': [],
             }  
